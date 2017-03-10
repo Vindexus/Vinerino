@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`10 cents 1`] = `
+<span
+  className="money"
+>
+  $
+  0.10
+</span>
+`;
+
+exports[`100 cents 1`] = `
+<span
+  className="money"
+>
+  $
+  1.00
+</span>
+`;
+
+exports[`101 cents 1`] = `
+<span
+  className="money"
+>
+  $
+  1.01
+</span>
+`;
+
+exports[`110 cents 1`] = `
+<span
+  className="money"
+>
+  $
+  1.10
+</span>
+`;
+
+exports[`1000 cents 1`] = `
+<span
+  className="money"
+>
+  $
+  10
+</span>
+`;
+
+exports[`10000 cents 1`] = `
+<span
+  className="money"
+>
+  $
+  100
+</span>
+`;
+
+exports[`100000 cents 1`] = `
+<span
+  className="money"
+>
+  $
+  1k
+</span>
+`;

@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+
+.progress-bar-container {
+  width: 400px;
+  height: 20px;
+}
+
+.progress-bar-outer {
+  width: 300px;
+  height: 20px;
+  position: relative;
+  top: 50%;
+  margin-top: -10px;
+  background: #999;
+  overflow: hidden;
+  border-radius: 5px;
+  float: left;
+}
+
+.progress-bar-inner {
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background: #000;
+  border-radius: 5px;
+}
+
+.progress-bar-numbers {
+  float: right;
+  width: 100px;
+  text-align:  center;
+  height: 20px;
+  line-height: 20px;
+}
