@@ -8,6 +8,7 @@ export default function matcherinoReducer (state = {}, action) {
       const goals = data.meta.stretchGoals
       const lastStretch = goals[goals.length - 1]
       const progress = Math.min(currentAmount / lastStretch.goal, 1)
+      console.log('progress', progress);
       const latestDonation = data.newtransactions.length > 0 ? data.newtransactions[0] : false
       const amountToNextGoal = lastStretch.goal - currentAmount
 

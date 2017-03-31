@@ -5,7 +5,6 @@ import Money from './Money'
 export default class ProgressBar extends React.Component {
   render () {
     const donation = this.props.donation
-
     if(!donation) {
       return null
     }

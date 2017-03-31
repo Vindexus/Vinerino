@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: ProgressBar 1`] = `
+<div
+  className="progress-bar-container"
+>
+  <div
+    className="progress-bar-outer"
+  >
+    <div
+      className="progress-bar-inner"
+      style={
+        Object {
+          "width": "66.67%",
+        }
+      }
+    />
+  </div>
+  <div
+    className="progress-bar-numbers"
+  >
+    <span
+      className="money"
+    >
+      $
+      200
+    </span>
+    /
+    <span
+      className="money"
+    >
+      $
+      300
+    </span>
+  </div>
+</div>
+`;
