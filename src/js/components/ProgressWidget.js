@@ -12,11 +12,20 @@ import Money from './Money'
   return {
     matcherino: store.matcherino
   }
+}, {
+  fetchMatcherino
 })
 
 export default class ProgressWidget extends React.Component {
   componentWillMount () {
-    this.props.dispatch(fetchMatcherino())
+    this.fetchTick()
+  }
+
+  fetchTick () {
+    this.props.fetchMatcherino()
+    setTimeout(() => {
+      this.fetchTick()
+    }, 10000)
   }
 
   render () {
