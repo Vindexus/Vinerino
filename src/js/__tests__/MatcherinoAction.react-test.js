@@ -13,7 +13,7 @@ const mockStore = configureMockStore(middlewares)
 
 //I'm making requests, then just including this as the response
 //this will need to be changed once I'm actually hooked up to the API
-const fixtureData = require('../data/4145')
+const fixtureData = require('../data/fakedata')
 
 describe('fetch matcherino information', () => {
   afterEach(() => {

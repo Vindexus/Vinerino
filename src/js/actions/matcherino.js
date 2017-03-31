@@ -14,7 +14,7 @@ export const fetchMatcherino = () => {
       .then((resp) => {
           dispatch({
             type: actionTypes.FETCH_MATCHERINO_FULFILLED,
-            payload: require('../data/4145')
+            payload: require('../data/fakedata')
           })
       })
       .catch((err, two) => {

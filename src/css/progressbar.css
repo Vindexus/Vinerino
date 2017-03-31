@@ -70,3 +70,14 @@ body {
 .highlight-goal .goal-desc {
   display: inline;
 }
+
+.progress-pip {
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  margin-top: -5px;
+  margin-left: -5px;
+  background: red;
+  border-radius: 3px;
+  position: absolute;
+}

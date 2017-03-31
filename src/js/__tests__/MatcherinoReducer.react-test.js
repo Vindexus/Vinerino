@@ -1,7 +1,7 @@
 import reducer from '../reducers/matcherino'
 import * as types from '../actionTypes/matcherino'
 
-import fixtureData from '../data/4145'
+import fixtureData from '../data/fakedata'
 
 describe('matcherino reducer', () => {
   it('should return the initial state', () => {

@@ -5,35 +5,49 @@ export default function matcherinoReducer (state = {}, action) {
     case actionTypes.FETCH_MATCHERINO_FULFILLED:
       const data = action.payload.body[0]
       const currentAmount = state.currentAmount ? state.currentAmount + 200000 : data.balance
-      const goals = data.meta.stretchGoals
-      const lastStretch = goals[goals.length - 1]
-      const progress = Math.min(currentAmount / lastStretch.goal, 1)
-      console.log('progress', progress);
-      const latestDonation = data.newtransactions.length > 0 ? data.newtransactions[0] : false
-      const amountToNextGoal = lastStretch.goal - currentAmount
+      let goals = data.meta.stretchGoals
+      const lastStretch = goals && goals.length > 0 ? goals[goals.length - 1] : false
+      const latestDonation = data.newtransations && data.newtransactions.length > 0 ? data.newtransactions[0] : false
+      const amountToNextGoal = lastStretch ? lastStretch.goal - currentAmount : data.meta.goal
+      const progress = Math.min(currentAmount / amountToNextGoal, 1)
 
+      let prevGoals = []
       let nextGoal = false
-      for(var i = 0; i < goals.length; i++) {
-        let goal = goals[i]
-        if(goal.goal > currentAmount) {
-          nextGoal = goal
-          break
+      let prevGoal = false
+
+      if(goals) {
+        goals = goals.map((goal) => {
+          goal.progressPosition = Math.min(goal.goal / lastStretch.goal, 1)
+          console.log('goal.progressPosition', goal.progressPosition);
+          return goal
+        })
+
+        for(var i = 0; i < goals.length; i++) {
+          let goal = goals[i]
+          if(goal.goal > currentAmount) {
+            nextGoal = goal
+            break
+          }
+        }
+        for(var i = goals.length - 1; i >= 0; i--) {
+          let goal = goals[i]
+          if(goal.goal < currentAmount) {
+            if(prevGoal === false) {
+              prevGoal = goal
+            }
+            prevGoals.push(goal)
+          }
         }
       }
-
-      let prevGoal = false
-      for(var i = goals.length - 1; i >= 0; i--) {
-        let goal = goals[i]
-        if(goal.goal < currentAmount) {
-          prevGoal = goal
-          break
-        }
+      else {
+        goals = []
       }
 
       return {
         rawData: data,
         progress: progress,
         prevGoal: prevGoal,
+        prevGoals: prevGoals,
         nextGoal: nextGoal,
         latestDonation: latestDonation,
         amountToNextGoal: amountToNextGoal,
