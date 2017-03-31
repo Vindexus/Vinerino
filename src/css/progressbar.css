@@ -1,6 +1,7 @@
 body {
   background: #333;
   color: #fff;
+  font-family: 'Droid Sans', sans-serif;
 }
 
 * {
@@ -49,4 +50,23 @@ body {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+
+.highlight-goal {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.highlight-goal > div {
+  display: inline;
+}
+
+.highlight-goal .label {
+  margin-right: 0.10em;
+}
+
+.highlight-goal .label,
+.highlight-goal .goal-desc {
+  display: inline;
 }

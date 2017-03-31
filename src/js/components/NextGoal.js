@@ -11,7 +11,7 @@ export default class NextGoal extends React.Component {
     }
 
     return (<div class="next-goal">
-      <div class="meta">Next unlock in <Money amount={amountToNextGoal} />:</div>
+      <div class="label">In <Money amount={amountToNextGoal} />:</div>
       <div class="goal-desc">{goal.desc}</div>
     </div>)
   }
